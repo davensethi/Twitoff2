@@ -52,8 +52,12 @@ def add_or_update_user(username):
     else: 
          DB.session.commit()
 
+def update_all_users():
+    """ Updates all tweets for all Users in User Table"""
+    for user in User.query.all():
+        add_or_update_user(user.name)
 
-def insert_example_users():
+#def insert_example_users():
   # using our functions to add two users
-  add_or_update_user('elonmusk')
-  add_or_update_user('jackblack')
+ # add_or_update_user('elonmusk')
+  #add_or_update_user('jackblack')

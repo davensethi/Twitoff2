@@ -3,7 +3,7 @@
 
   <head>
     <title>TwitOff - {{ title }}</title>
-    <link rel="stylesheet" href="https://unpkg.com/picnic"/>
+    <link rel="stylesheet" href="https://unpkg.com/picnic" />
   </head>
 
   <body>
@@ -13,7 +13,7 @@
       <!-- responsive-->
       <input id="bmenub" type="checkbox" class="show">
       <label for="bmenub" class="burger pseudo button">Menu</label>
-      
+
       <div class="menu">
         <a href="/update" class="button warning">Update Tweets</a>
         <a href="/reset" class="button error">Reset Database</a>
@@ -25,9 +25,14 @@
       <div>
         <h1>{{ title }}</h1>
         <form action="/compare" method="post">
-          <select name="user">
+          <select name="user1">
             {% for user in users %}
-            <option value="{{ user.name }}">{{user.name}}</option>
+            <option value="{{ user.name }}">{{ user.name }}</option>
+            {% endfor %}
+          </select>
+          <select name="user2">
+            {% for user in users %}
+            <option value="{{ user.name }}">{{ user.name }}</option>
             {% endfor %}
           </select>
           <input type="text" name="tweet_text" placeholder="Tweet text to predict">
@@ -49,5 +54,5 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/umbrellajs"/> -->
   </body>
 
-</html>   
+</html>
  
